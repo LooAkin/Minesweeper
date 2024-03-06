@@ -181,11 +181,11 @@ public class MSButton
     {
         return flagged;
     }
-    
-    public void keyPressed(){
-      if(endGame == true){
+}
+
+public void keyPressed(){
+    if(endGame == true){
         setup();
         loop();
-      }
     }
 }
