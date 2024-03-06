@@ -128,8 +128,10 @@ public class MSButton
       }
       else if(buttons[myRow][myCol].isFlagged() == false) {
         clicked = true;
-        if(mines.contains(buttons[myRow][myCol]) == true)
+        if(mines.contains(buttons[myRow][myCol]) == true){
+          draw();
           displayLosingMessage();
+        }
         else { 
           openCount++;
           if(countMines(myRow, myCol) == 0){
