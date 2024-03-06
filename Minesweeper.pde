@@ -162,12 +162,11 @@ public class MSButton
             fill(0,100,100);
         else 
             fill(0,0,200);
-
         rect(x, y, width, height);
         fill(255, 200, 255);
         text(myLabel,x+width/2,y+height/2);
         if (isWon() == true)
-          displayWinningMessage();
+            displayWinningMessage();
     }
     public void setLabel(String newLabel)
     {   
