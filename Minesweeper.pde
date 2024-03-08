@@ -57,13 +57,14 @@ public void displayLosingMessage()
     text("You Lose :(", 500, 100);
     for(int c = 0; c < NUM_COLS; c++){
       for(int r = 0; r < NUM_ROWS; r++){
-          if(mines.contains(buttons[r][c]))
+          if(!mines.contains(buttons[r][c]))
             fill(200,0,0);
-          else if(buttons[r][c].isFlagged() == true)
+          else if(buttons[r][c].isFlagged() == false)
             buttons[r][c].setLabel("X");
     }
   }
-    noLoop(); 
+    noLoop();
+    
 }
 public void displayWinningMessage()
 {
