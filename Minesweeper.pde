@@ -55,7 +55,14 @@ fill(255, 150, 0);
     rect(300, 50, 400, 100);
     fill(20, 200, 20);
     text("You Lose :(", 500, 100);
-noLoop();
+    for(int c = 0; c < NUM_COLS; c++){
+                for(int r = 0; r < NUM_ROWS; r++){
+                  if(mines.contains(buttons[r][c]))
+                    buttons[r][c].clicked = true;
+                  else if(buttons[r][c].isFlagged() == true)
+                    buttons[r][c].setLabel("X");
+                }
+         }
     
 }
 public void displayWinningMessage()
@@ -123,14 +130,7 @@ public class MSButton
       else if(buttons[myRow][myCol].isFlagged() == false) {
         clicked = true;
         if(mines.contains(buttons[myRow][myCol]) == true){
-          for(int c = 0; c < NUM_COLS; c++){
-                for(int r = 0; r < NUM_ROWS; r++){
-                  if(mines.contains(buttons[r][c]))
-                    buttons[r][c].clicked = true;
-                  else if(buttons[r][c].isFlagged() == true)
-                    buttons[r][c].setLabel("X");
-                }
-         }
+          
           draw();
           displayLosingMessage();
         }
