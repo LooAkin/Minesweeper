@@ -3,15 +3,13 @@ public final static int NUM_ROWS = 20;
 public final static int NUM_COLS = 20;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> mines; //ArrayList of just the minesweeper buttons that are mined
-public int openCount;
-public boolean endGame;
+public int count, openCount;
 
 void setup ()
 {
     size(1000, 1000);
     textAlign(CENTER,CENTER);
     textSize(20);
-    endGame = false;
     // make the manager
     Interactive.make( this );
     buttons = new MSButton[NUM_ROWS][NUM_COLS];
@@ -23,6 +21,7 @@ void setup ()
     
     mines = new ArrayList <MSButton> ();
     setMines();
+    count = mines.size();
     openCount = 0;
 }
 public void setMines()
@@ -58,7 +57,6 @@ public void displayLosingMessage()
     text("You Lose :(", 500, 100);
     text("Press Any Key to Restart", 500, 120);
     noLoop();
-    endGame = true;
     
 }
 public void displayWinningMessage()
@@ -69,7 +67,6 @@ public void displayWinningMessage()
     text("You WIN! :D", 500, 100);
     text("Press Any Key to Play a New Round", 500, 120);
     noLoop();
-    endGame = true;
 }
 public boolean isValid(int r, int c)
 {
@@ -118,9 +115,11 @@ public class MSButton
       if(mouseButton == RIGHT){
         if((buttons[myRow][myCol].isFlagged() == false)&&(clicked == false)){
           flagged = true;
+          count --;
         }
         else if(clicked == false){
           flagged = false;
+          count ++;
         }
       }
       else if(buttons[myRow][myCol].isFlagged() == false) {
@@ -148,6 +147,11 @@ public class MSButton
 
     public void draw () 
     {    
+      fill(0);
+      rect(25, 25, 200, 100); 
+      fill(255);
+      text("Number of Mines:", 125, 50);
+      text(count, 125, 100);
         if (flagged)
             fill(200,200,0);
         else if( clicked && mines.contains(this) ) 
@@ -176,9 +180,3 @@ public class MSButton
         return flagged;
     }
 }
-public void keyPressed(){
-      if(endGame == true){
-        setup();
-        loop();
-      }
-    }
