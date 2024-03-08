@@ -52,20 +52,18 @@ public boolean isWon()
 public void displayLosingMessage()
 {
     fill(255, 150, 0);
-    rect(300, 50, 400, 100);
+    rect(300, 50, 400, 50);
     fill(20, 200, 20);
     text("You Lose :(", 500, 100);
-    text("Press Any Key to Restart", 500, 120);
     noLoop();
     
 }
 public void displayWinningMessage()
 {
     fill(20, 200, 20);
-    rect(300, 50, 400, 100);
+    rect(300, 50, 400, 50);
     fill(255, 150, 0);
     text("You WIN! :D", 500, 100);
-    text("Press Any Key to Play a New Round", 500, 120);
     noLoop();
 }
 public boolean isValid(int r, int c)
