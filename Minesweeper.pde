@@ -124,11 +124,13 @@ public class MSButton
         clicked = true;
         if(mines.contains(buttons[myRow][myCol]) == true){
           for(int c = 0; c < NUM_COLS; c++){
-      for(int r = 0; r < NUM_ROWS; r++){
-          if(mines.contains(buttons[r][c]))
-            buttons[r][c].clicked = true;
-          else if(buttons[r][c].isFlagged() == true)
-            buttons[r][c].setLabel("X");
+                for(int r = 0; r < NUM_ROWS; r++){
+                  if(mines.contains(buttons[r][c]))
+                    buttons[r][c].clicked = true;
+                  else if(buttons[r][c].isFlagged() == true)
+                    buttons[r][c].setLabel("X");
+                }
+         }
           draw();
           displayLosingMessage();
         }
