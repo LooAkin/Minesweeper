@@ -3,7 +3,7 @@ public final static int NUM_ROWS = 20;
 public final static int NUM_COLS = 20;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> mines; //ArrayList of just the minesweeper buttons that are mined
-public int count, openCount;
+public int openCount;
 public boolean endGame;
 
 void setup ()
@@ -23,7 +23,6 @@ void setup ()
     
     mines = new ArrayList <MSButton> ();
     setMines();
-    count = mines.size();
     openCount = 0;
 }
 public void setMines()
@@ -119,11 +118,9 @@ public class MSButton
       if(mouseButton == RIGHT){
         if((buttons[myRow][myCol].isFlagged() == false)&&(clicked == false)){
           flagged = true;
-          count --;
         }
         else if(clicked == false){
           flagged = false;
-          count ++;
         }
       }
       else if(buttons[myRow][myCol].isFlagged() == false) {
@@ -151,11 +148,6 @@ public class MSButton
 
     public void draw () 
     {    
-      fill(0);
-      rect(25, 25, 200, 100); 
-      fill(255);
-      text("Number of Mines:", 125, 50);
-      text(count, 125, 100);
         if (flagged)
             fill(200,200,0);
         else if( clicked && mines.contains(this) ) 
