@@ -52,7 +52,7 @@ public boolean isWon()
 public void displayLosingMessage()
 {
     fill(255, 150, 0);
-    rect(300, 50, 400, 50);
+    rect(300, 50, 400, 100);
     fill(20, 200, 20);
     text("You Lose :(", 500, 100);
     noLoop();
@@ -61,7 +61,7 @@ public void displayLosingMessage()
 public void displayWinningMessage()
 {
     fill(20, 200, 20);
-    rect(300, 50, 400, 50);
+    rect(300, 50, 400, 100);
     fill(255, 150, 0);
     text("You WIN! :D", 500, 100);
     noLoop();
