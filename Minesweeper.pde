@@ -57,11 +57,12 @@ public void displayLosingMessage()
     text("You Lose :(", 500, 100);
     for(int i = 0; i < 50; i++){
     for(int c = 0; c < NUM_COLS; c++){
-      for(int r = 0; r < NUM_ROWS; r++)
+      for(int r = 0; r < NUM_ROWS; r++){
           if(!mines.contains(buttons[r][c]))
             fill(200,0,0);
           else if(buttons[myRow][myCol].isFlagged() == false)
             buttons[myRow][myCol].setLabel("X");
+    }
   }
     noLoop();
     
