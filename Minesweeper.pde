@@ -132,11 +132,11 @@ public class MSButton
                     }
                   else{
                     if((countMines(r, c) != 0)&&(!mines.contains(buttons[r][c])))
-                        buttons[myRow][myCol].setLabel(countMines(myRow,myCol));
+                        buttons[myRow][myCol].setLabel(countMines(r,c));
                     buttons[r][c].clicked = true;
                   }
                 }
-         }
+            }
         }
         else { 
           openCount++;
