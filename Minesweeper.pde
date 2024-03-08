@@ -58,7 +58,7 @@ public void displayLosingMessage()
     for(int c = 0; c < NUM_COLS; c++){
       for(int r = 0; r < NUM_ROWS; r++){
           if(!mines.contains(buttons[r][c]))
-            fill(200,0,0);
+            clicked = true;
           else if(buttons[r][c].isFlagged() == false)
             buttons[r][c].setLabel("X");
     }
