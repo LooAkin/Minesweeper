@@ -63,7 +63,6 @@ public void displayLosingMessage()
             buttons[r][c].setLabel("X");
     }
   }
-    noLoop();
     
 }
 public void displayWinningMessage()
@@ -72,7 +71,6 @@ public void displayWinningMessage()
     rect(300, 50, 400, 100);
     fill(255, 150, 0);
     text("You WIN! :D", 500, 100);
-    noLoop();
 }
 public boolean isValid(int r, int c)
 {
