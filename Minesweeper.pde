@@ -117,11 +117,11 @@ public class MSButton
     {
        
       if(mouseButton == RIGHT){
-        if((buttons[myRow][myCol].isFlagged() == false)&&(!clicked)){
+        if((buttons[myRow][myCol].isFlagged() == false)&&(clicked == false)){
           flagged = true;
           count --;
         }
-        else {
+        else if(clicked == false){
           flagged = false;
           count ++;
         }
