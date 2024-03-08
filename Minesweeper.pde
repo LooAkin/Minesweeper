@@ -51,11 +51,11 @@ public boolean isWon()
 }
 public void displayLosingMessage()
 {
-fill(255, 150, 0);
+    fill(255, 150, 0);
     rect(300, 50, 400, 100);
     fill(20, 200, 20);
     text("You Lose :(", 500, 100);
-    noLoop();
+
     
 }
 public void displayWinningMessage()
@@ -123,6 +123,7 @@ public class MSButton
       else if(buttons[myRow][myCol].isFlagged() == false) {
         clicked = true;
         if(mines.contains(buttons[myRow][myCol]) == true){
+            openCount - -1;
           for(int c = 0; c < NUM_COLS; c++){
                 for(int r = 0; r < NUM_ROWS; r++){
                   if(buttons[r][c].isFlagged() == true){
@@ -133,8 +134,6 @@ public class MSButton
                     buttons[r][c].clicked = true;
                 }
          }
-          draw();
-          displayLosingMessage();
         }
         else { 
           openCount++;
@@ -160,6 +159,8 @@ public class MSButton
       fill(255);
       text("Number of Mines:", 125, 50);
       text(count, 125, 100);
+      if(count < 0)
+        displayLosingMessage();
         if (flagged)
             fill(200,200,0);
         else if( clicked && mines.contains(this) ) 
