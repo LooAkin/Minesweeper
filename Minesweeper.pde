@@ -130,8 +130,11 @@ public class MSButton
                     if(!mines.contains(buttons[r][c]))
                         buttons[r][c].setLabel("X");
                     }
-                  else
+                  else{
+                    if((countMines(r, c) != 0)&&(!mines.contains(buttons[r][c])))
+                        buttons[myRow][myCol].setLabel(countMines(myRow,myCol));
                     buttons[r][c].clicked = true;
+                  }
                 }
          }
         }
