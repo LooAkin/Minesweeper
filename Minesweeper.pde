@@ -51,10 +51,7 @@ public boolean isWon()
 }
 public void displayLosingMessage()
 {
-    fill(255, 150, 0);
-    rect(300, 50, 400, 100);
-    fill(20, 200, 20);
-    text("You Lose :(", 500, 100);
+    
     for(int c = 0; c < NUM_COLS; c++){
       for(int r = 0; r < NUM_ROWS; r++){
           if(mines.contains(buttons[r][c]))
@@ -63,6 +60,11 @@ public void displayLosingMessage()
             buttons[r][c].setLabel("X");
     }
   }
+fill(255, 150, 0);
+    rect(300, 50, 400, 100);
+    fill(20, 200, 20);
+    text("You Lose :(", 500, 100);
+noLoop();
     
 }
 public void displayWinningMessage()
@@ -71,6 +73,7 @@ public void displayWinningMessage()
     rect(300, 50, 400, 100);
     fill(255, 150, 0);
     text("You WIN! :D", 500, 100);
+noLoop();
 }
 public boolean isValid(int r, int c)
 {
