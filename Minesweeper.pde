@@ -59,8 +59,10 @@ public void displayLosingMessage()
       for(int r = 0; r < NUM_ROWS; r++){
           if(mines.contains(buttons[r][c]))
             fill(200,0,0);
-          else if(buttons[r][c].isFlagged() == true)
+          else if(buttons[r][c].isFlagged() == true){
+            fill(0);
             buttons[r][c].setLabel("X");
+      }
     }
   }
     noLoop();
