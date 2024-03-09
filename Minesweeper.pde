@@ -123,7 +123,7 @@ public class MSButton
       else if(buttons[myRow][myCol].isFlagged() == false) {
         clicked = true;
         if(mines.contains(buttons[myRow][myCol]) == true){
-            openCount - -1;
+            openCount - -100000;
           for(int c = 0; c < NUM_COLS; c++){
                 for(int r = 0; r < NUM_ROWS; r++){
                   if(buttons[r][c].isFlagged() == true){
