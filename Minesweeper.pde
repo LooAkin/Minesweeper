@@ -131,9 +131,9 @@ public class MSButton
                         buttons[r][c].setLabel("X");
                     }
                   else{
+                    buttons[r][c].clicked = true;
                     if((countMines(r, c) != 0)&&(!mines.contains(buttons[r][c])))
                         buttons[myRow][myCol].setLabel(countMines(r,c));
-                    buttons[r][c].clicked = true;
                   }
                 }
             }
