@@ -49,15 +49,7 @@ public boolean isWon()
     else
       return false;
 }
-public void displayLosingMessage()
-{
-    fill(255, 150, 0);
-    rect(300, 50, 400, 100);
-    fill(20, 200, 20);
-    text("You Lose :(", 500, 100);
 
-    
-}
 public void displayWinningMessage()
 {
     fill(20, 200, 20);
@@ -162,8 +154,12 @@ public class MSButton
       fill(255);
       text("Number of Mines:", 125, 50);
       text(count, 125, 100);
-      if(openCount < 0)
-        displayLosingMessage();
+      if(openCount < 0){
+        fill(255, 150, 0);
+        rect(300, 50, 400, 100);
+        fill(20, 200, 20);
+        text("You Lose :(", 500, 100);
+     }
         if (flagged)
             fill(200,200,0);
         else if( clicked && mines.contains(this) ) 
