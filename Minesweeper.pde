@@ -160,7 +160,7 @@ public class MSButton
       fill(255);
       text("Number of Mines:", 125, 50);
       text(count, 125, 100);
-      if(loss = true){
+      if(loss == true){
         displayLosingMessage();
      }
         if (flagged)
