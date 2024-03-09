@@ -49,7 +49,12 @@ public boolean isWon()
     else
       return false;
 }
-
+public void displayLosingMessage(){
+    fill(255, 150, 0);
+    rect(300, 50, 400, 100);
+    fill(20, 200, 20);
+    text("You Lose :(", 500, 100);
+}
 public void displayWinningMessage()
 {
     fill(20, 200, 20);
@@ -115,7 +120,6 @@ public class MSButton
       else if(buttons[myRow][myCol].isFlagged() == false) {
         clicked = true;
         if(mines.contains(buttons[myRow][myCol]) == true){
-            openCount - -100000;
           for(int c = 0; c < NUM_COLS; c++){
                 for(int r = 0; r < NUM_ROWS; r++){
                   if(buttons[r][c].isFlagged() == true){
@@ -129,6 +133,7 @@ public class MSButton
                   }
                 }
             }
+            openCount - -1;
         }
         else { 
           openCount++;
@@ -155,10 +160,7 @@ public class MSButton
       text("Number of Mines:", 125, 50);
       text(count, 125, 100);
       if(openCount < 0){
-        fill(255, 150, 0);
-        rect(300, 50, 400, 100);
-        fill(20, 200, 20);
-        text("You Lose :(", 500, 100);
+        displayLosingMessage();
      }
         if (flagged)
             fill(200,200,0);
