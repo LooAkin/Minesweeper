@@ -4,6 +4,7 @@ public final static int NUM_COLS = 20;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> mines; //ArrayList of just the minesweeper buttons that are mined
 public int count, openCount;
+public boolean loss;
 
 void setup ()
 {
@@ -18,7 +19,7 @@ void setup ()
       for(int r = 0; r < NUM_ROWS; r++)
         buttons[r][c] = new MSButton(r,c);
     }
-    
+    loss = false;
     mines = new ArrayList <MSButton> ();
     setMines();
     count = mines.size();
@@ -133,7 +134,7 @@ public class MSButton
                   }
                 }
             }
-            openCount - -1;
+            loss = true;
         }
         else { 
           openCount++;
@@ -159,7 +160,7 @@ public class MSButton
       fill(255);
       text("Number of Mines:", 125, 50);
       text(count, 125, 100);
-      if(openCount < 0){
+      if(loss = true){
         displayLosingMessage();
      }
         if (flagged)
