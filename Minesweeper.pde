@@ -45,7 +45,7 @@ public void draw ()
 }
 public boolean isWon()
 {
-    if(openCount == ((NUM_ROWS*NUM_COLS)-mines.size()))
+    if(openCount == ((NUM_ROWS*NUM_COLS)-50))
       return true;
     else
       return false;
